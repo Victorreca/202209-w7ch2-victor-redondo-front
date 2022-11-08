@@ -13,7 +13,7 @@ const useApi = () => {
   const dispatch = useAppDispatch();
 
   const loadAllRobots = useCallback(async () => {
-    const response = await fetch(`${apiUrl}`);
+    const response = await fetch(`${apiUrl}/robots`);
     const apiResponse: ApiRobot = await response.json();
     dispatch(loadRobotsActionCreator(apiResponse.robots));
   }, [dispatch]);
